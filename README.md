@@ -50,4 +50,5 @@ Inference Time | 94.8 ms | 43.4 ms
 GPU Memory | 2480 Mb | 1613 Mb
 
 ## Acknowledgement
-- Original Source: https://github.com/pbcquoc/vietocr
+- Yolor: https://github.com/WongKinYiu/yolor
+- Yolor-TensorRT: https://github.com/NNDam/yolor
