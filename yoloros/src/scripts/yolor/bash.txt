@@ -1,0 +1,65 @@
+#working Directory
+conda activate trtyolor
+cd ~/Documents/trtYolor/yolor
+
+#Run webcam detection
+python3 detect.py --source 0 --cfg cfg/yolor_p6.cfg --weights weights/yolor_p6.pt --conf 0.25 --img-size 1280 --device 0
+python3 detect.py --source 0 --cfg cfg/yolor_w6_gen.cfg --weights weights/tomato_w6.pt --conf 0.25 --img-size 1280 --device 0
+
+python3 detect.py --source inference/images/horses.jpg --cfg cfg/yolor_p6.cfg --weights weights/tomato_w6.pt --conf 0.25 --img-size 1280 --device 0
+
+
+python3 trtDetect.py --source 0 --cfg cfg/yolor_p6.cfg --conf 0.25 --img-size 1280 --device 0
+
+
+
+#Onnx2TRT
+/usr/src/tensorrt/bin/trtexec --onnx=./onnx/yolor_csp_x.onnx \
+                                --saveEngine=./engine/yolor_csp_x_star-fp16.trt \
+                                --explicitBatch \
+                                --minShapes=input:1x3x416x416 \
+                                --optShapes=input:1x3x896x896 \
+                                --maxShapes=input:1x3x896x896 \
+                                --verbose \
+                                --fp16 \
+                                --device=0
+
+/usr/src/tensorrt/bin/trtexec --onnx=./onnx/tomato_p6.onnx \
+                                --saveEngine=./engine/tomato_p6_fp16.trt \
+                                --explicitBatch \
+                                --minShapes=input:1x3x720x720 \
+                                --optShapes=input:1x3x1280x1280 \
+                                --maxShapes=input:1x3x1280x1280 \
+                                --verbose \
+                                --fp16 \
+                                --device=0
+
+/usr/src/tensorrt/bin/trtexec --onnx=./onnx/yolor_p6.onnx \
+                                --saveEngine=./engine/yolor_p6_int8.trt \
+                                --explicitBatch \
+                                --minShapes=input:1x3x720x720 \
+                                --optShapes=input:1x3x1280x1280 \
+                                --maxShapes=input:1x3x1280x1280 \
+                                --verbose \
+                                --int8 \
+                                --device=0
+
+/usr/src/tensorrt/bin/trtexec --onnx=./onnx/tomato_w6.onnx \
+                                --saveEngine=./engine/tomato_w6_fp16.trt \
+                                --explicitBatch \
+                                --minShapes=input:1x3x420x420 \
+                                --optShapes=input:1x3x1280x1280 \
+                                --maxShapes=input:1x3x1280x1280 \
+                                --verbose \
+                                --fp16 \
+                                --device=0
+
+/usr/src/tensorrt/bin/trtexec --onnx=./onnx/yolor_p6.onnx \
+                                --saveEngine=./engine/yolor_p6_fp16.trt \
+                                --explicitBatch \
+                                --minShapes=input:1x3x416x416 \
+                                --optShapes=input:1x3x1280x1280 \
+                                --maxShapes=input:1x3x1280x1280 \
+                                --verbose \
+                                --fp16 \
+                                --device=0

@@ -1,0 +1,29 @@
+<launch>
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find yoloros)/gazebo/world/coco.world"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="recording" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+  
+  <!-- Spawn Depth Camera with Gazebo Plugin -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find yoloros)/gazebo/urdf/camera.urdf.xacro'" />
+    <arg name="x" default="0"/>
+    <arg name="y" default="0"/>
+    <arg name="z" default="0.5"/>
+    <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model"
+          args="-urdf -param robot_description -model m2wr -x $(arg x) -y $(arg y) -z $(arg z)" />
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="rob_st_pub" >
+      <remap from="robot_description" to="robot_description" />
+      <remap from="joint_states" to="joint_states" />
+    </node>
+
+    <!-- Detection and Rviz -->
+    <node pkg="yoloros" name="rosDetection" type="rosimage_detector.py"/>
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find yoloros)/gazebo/rviz/yoloros.rviz" />
+
+</launch>
