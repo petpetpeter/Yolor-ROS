@@ -1,5 +1,5 @@
 # Yolor-ROS
-A set of python scripts implementing Yolor with TensorRT for object detection with ROS.
+A set of python scripts implementing Yolor with TensorRT for object detection in ROS.
 
 ## Preparation
 1. Clone this resipiratory to your catkin workspace
