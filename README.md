@@ -1,6 +1,12 @@
 # Yolor-ROS
 A set of python scripts implementing Yolor with TensorRT for object detection in ROS workspace.
 
+
+![miniyellow](https://user-images.githubusercontent.com/55285546/137327224-e73b6477-19bd-483c-a2c5-71dba517235b.gif)
+
+
+
+
 ## Preparation
 1. Clone this resipiratory to your catkin workspace
 ```
