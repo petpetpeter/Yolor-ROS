@@ -20,6 +20,7 @@ catkin build
 ```
 3. Install Python Dependencies
 ```
+roscd yoloros/scripts/yolor
 pip install -r requirements.txt
 ```
 4. Launch ROS Yolor example
