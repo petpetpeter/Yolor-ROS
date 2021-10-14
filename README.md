@@ -54,8 +54,8 @@ roslaunch yoloros trt_camera.launch
 ## Runtime Performance
 Yolor | Baseline-FP16 | TensorRT-FP16 
 --- | --- | ---  
-Inference Time | 94.8 ms | 43.4 ms 
-GPU Memory | 2480 Mb | 1613 Mb
+Inference Time | - ms | - ms 
+GPU Memory | - Mb | - Mb
 
 ## Acknowledgement
 - Yolor: https://github.com/WongKinYiu/yolor
