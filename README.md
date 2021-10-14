@@ -17,6 +17,7 @@ git clone https://github.com/petpetpeter/Yolor-ROS.git
 ```
 cd /catkin_ws/
 catkin build
+source ~/.bashrc
 ```
 3. Install Python Dependencies
 ```
