@@ -20,7 +20,7 @@ catkin build
 ```
 3. Install Python Dependencies
 ```
-pip install -e requirements.txt
+pip install -r requirements.txt
 ```
 4. Launch ROS Yolor example
 ```
