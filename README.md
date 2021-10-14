@@ -51,11 +51,7 @@ python convert2Onnx.py --weight weights/yolor_p6.pt --out onnx/yolor_p6.onnx
 roslaunch yoloros trt_camera.launch
 ```
 
-## Runtime Performance
-Yolor | Baseline-FP16 | TensorRT-FP16 
---- | --- | ---  
-Inference Time | - ms | - ms 
-GPU Memory | - Mb | - Mb
+
 
 ## Acknowledgement
 - Yolor: https://github.com/WongKinYiu/yolor
