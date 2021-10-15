@@ -25,7 +25,7 @@ roscd yoloros/scripts/yolor
 pip install -r requirements.txt
 ```
 4. Download pretrain weight 
-> 
+> https://drive.google.com/file/d/1_vgbLEjV0TU5492MfNEkJduTdGtcdthN/view?usp=sharing
 
 5. Launch ROS Yolor example
 ```
