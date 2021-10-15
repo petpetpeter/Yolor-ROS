@@ -24,7 +24,10 @@ source ~/.bashrc
 roscd yoloros/scripts/yolor
 pip install -r requirements.txt
 ```
-4. Launch ROS Yolor example
+4. Download pretrain weight 
+> 
+
+5. Launch ROS Yolor example
 ```
 roslaunch yoloros camera.launch
 ```
