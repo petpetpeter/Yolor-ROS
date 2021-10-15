@@ -29,6 +29,9 @@ pip install -r requirements.txt
 roslaunch yoloros camera.launch
 ```
 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/55285546/137414960-87923703-37f9-4523-9f6d-6454ce6bbe73.gif)
+
+
 > TensorRT 8.0.3.4: Follow installation guide here https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html
 1. Convert pytorch weight file to onnx file
 ```
