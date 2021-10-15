@@ -37,7 +37,7 @@ from exec_backends.trt_loader import TrtModel
 class YOLOR(object):
     def __init__(self,conf=0.7):
         max_size = 896
-        ENGINE_PATH     = os.path.dirname(os.path.abspath(__file__))+'/engine/yolor_p6_fp16.trt'
+        ENGINE_PATH     = os.path.dirname(os.path.abspath(__file__))+'/yolor_p6_fp16.trt'
         CLASS_NAME_PATH = os.path.dirname(os.path.abspath(__file__))+'/data/coco.names'
         self.names = self.load_classes(CLASS_NAME_PATH)
         self.colors = [[np.random.randint(0, 255) for _ in range(3)] for _ in range(len(self.names))]
