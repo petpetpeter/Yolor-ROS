@@ -39,7 +39,7 @@ from utils.torch_utils import select_device, load_classifier, time_synchronized
 class YOLOR(object):
     def __init__(self,conf=0.7):
         max_size = 896
-        WEIGHT_PATH     = os.path.dirname(os.path.abspath(__file__))+'/weights/yolor_p6.pt'
+        WEIGHT_PATH     = os.path.dirname(os.path.abspath(__file__))+'/yolor_p6.pt'
         CONFIG_PATH     = os.path.dirname(os.path.abspath(__file__))+'/cfg/yolor_p6.cfg'
         CLASS_NAME_PATH = os.path.dirname(os.path.abspath(__file__))+'/data/coco.names'
         self.names = self.load_classes(CLASS_NAME_PATH)
