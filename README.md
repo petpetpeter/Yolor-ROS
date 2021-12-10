@@ -29,7 +29,7 @@ pip install -r requirements.txt
 
 5. Launch ROS Yolor example
 ```
-roslaunch yoloros camera.launch
+roslaunch yoloros yolor_camera.launch
 ```
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/55285546/137414960-87923703-37f9-4523-9f6d-6454ce6bbe73.gif)
