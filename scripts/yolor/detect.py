@@ -20,7 +20,7 @@ from utils.torch_utils import select_device, load_classifier, time_synchronized
 from models.models import *
 from utils.datasets import *
 from utils.general import *
-from models.models import Darknet
+from exec_backends.trt_loader import TrtModel
 
 def load_classes(path):
     # Loads *.names file at 'path'

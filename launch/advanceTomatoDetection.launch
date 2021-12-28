@@ -1,0 +1,5 @@
+<launch>
+        <include file="$(find azure_kinect_ros_driver)/launch/driver.launch" />
+        <!-- Detection -->
+        <node pkg="tomato_detection" name="tomatoBaseCameraYolor" type="tomatoBaseCameraYolor.py" />
+</launch>

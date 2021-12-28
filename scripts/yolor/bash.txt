@@ -54,11 +54,42 @@ python3 trtDetect.py --source 0 --cfg cfg/yolor_p6.cfg --conf 0.25 --img-size 12
                                 --fp16 \
                                 --device=0
 
-/usr/src/tensorrt/bin/trtexec --onnx=./onnx/yolor_p6.onnx \
-                                --saveEngine=./engine/yolor_p6_fp16.trt \
+/usr/src/tensorrt/bin/trtexec --onnx=./onnx/advanceTomato1999.onnx \
+                                --saveEngine=./engine/tomato1999_advance_fp16.trt \
                                 --explicitBatch \
-                                --minShapes=input:1x3x416x416 \
+                                --minShapes=input:1x3x420x420 \
                                 --optShapes=input:1x3x1280x1280 \
+                                --maxShapes=input:1x3x1280x1280 \
+                                --verbose \
+                                --fp16 \
+                                --device=0
+
+/usr/src/tensorrt/bin/trtexec --onnx=./onnx/advanceTomato2999.onnx \
+                                --saveEngine=./engine/tomato2999_advance_fp16.trt \
+                                --explicitBatch \
+                                --minShapes=input:1x3x512x512 \
+                                --optShapes=input:1x3x896x512 \
+                                --maxShapes=input:1x3x1280x1280 \
+                                --verbose \
+                                --fp16 \
+                                --device=0
+
+/usr/src/tensorrt/bin/trtexec --onnx=./onnx/advanceTomato1999.onnx \
+                                --saveEngine=./engine/tomato1999_advance_fp16.trt \
+                                --explicitBatch \
+                                --minShapes=input:1x3x512x512 \
+                                --optShapes=input:1x3x896x512 \
+                                --maxShapes=input:1x3x1280x1280 \
+                                --verbose \
+                                --fp16 \
+                                --device=0
+
+                                epoch2870
+/usr/src/tensorrt/bin/trtexec --onnx=./onnx/epoch2870.onnx \
+                                --saveEngine=./engine/epoch2870.trt \
+                                --explicitBatch \
+                                --minShapes=input:1x3x512x512 \
+                                --optShapes=input:1x3x896x512 \
                                 --maxShapes=input:1x3x1280x1280 \
                                 --verbose \
                                 --fp16 \

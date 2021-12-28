@@ -8,9 +8,13 @@ from models.models import Darknet
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', type=str, default='./weights/yolor_p6.pt', help='weights path')
-    parser.add_argument('--cfg', type=str, default='./cfg/yolor_p6.cfg', help='config path')
-    parser.add_argument('--output', type=str, default='./onnx/yolor_p6.onnx', help='output ONNX model path')
+    parser.add_argument('--weights', type=str, default='./weights/arv_raw_best.pt', help='weights path')
+    parser.add_argument('--cfg', type=str, default='./cfg/yolor_csp_arv_raw_gray.cfg', help='config path')
+    parser.add_argument('--output', type=str, default='./onnx/arv_raw_best.onnx', help='output ONNX model path')
+    # parser.add_argument('--weights', type=str, default='./weights/deepSeaPipelast.pt', help='weights path')
+    # parser.add_argument('--cfg', type=str, default='./cfg/yolor_csp_deepSeaPipe.cfg', help='config path')
+    # parser.add_argument('--output', type=str, default='./onnx/deepSeaPipelast.onnx', help='output ONNX model path')
+
     parser.add_argument('--max_size', type=int, default=1280, help='max size of input image')
     opt = parser.parse_args()
     model_cfg = opt.cfg
