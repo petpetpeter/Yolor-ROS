@@ -20,9 +20,10 @@ catkin build
 source ~/.bashrc
 ```
 3. Install Python Dependencies
+install pytorch according to your environment https://pytorch.org/
 ```
 roscd yoloros/scripts/yolor
-pip install -r requirements.txt
+pip install -e .
 ```
 4. Download pretrain weight to /scripts/yolor
 > https://drive.google.com/file/d/1_vgbLEjV0TU5492MfNEkJduTdGtcdthN/view?usp=sharing
