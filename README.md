@@ -20,6 +20,7 @@ catkin build
 source ~/.bashrc
 ```
 3. Install Python Dependencies
+
 install pytorch according to your environment https://pytorch.org/
 ```
 roscd yoloros/scripts/yolor
